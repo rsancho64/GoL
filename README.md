@@ -1,25 +1,21 @@
-# Conway's Game of Life
+# The Conway's Game of Life (GoL: el juego de la vida de Conway)
 
-The Game of Life is a cellular automaton created by John H. Conway in 1970. The game is a zero-player game in which an initially configured 2D grid of cells evolves according to the Game of Life [ruleset](#Ruleset).
+El juego de la vida es un automata celular creado por John H. Conway en 1970. Es un juego de 0 jugadores (lo empiezas y sigue solo) es decir: una configuracion inicial 2D es el comienzo del resto de la historia.
 
-Built using Python 3.5, this implementation of Conway's Game of Life allows the user to easily run the Game of Life using a 2D grid of choosen number of rows and columns in either a Linux or Windows terminal/console.
+Esta implementación (programacion del juego) usa python 3.5 y se renderiza en terminal (es una aplicación CLI)
 
-This project is licensed under the terms of the MIT license.
+## Reglas
 
-## Ruleset
+Las siguientes 4 reglas son la lógica de la evolucion del tablero, que termina -junto al juego- en una situacion estática, o con todas las celulas muertas (vacias) o en un caso intermedio, cuando solo hay osciladores -o naves- estables.
 
-Using the following ruleset the 2D grid of cells will evolve from generation to generation until it reaches a static state of either all dead cells or a mix of still, oscillating, or moving (spaceship) cells.
-
-1. _**Underpopulation**_ - If a live cell has is surrounded by less than two surrounding neighbours it dies and does not make it to the next generation.
-2. _**Equilibrium**_ - If a live cell is surrounded by two or three living neighbors the cell stays alive and makes it to the next generation.
-3. _**Overpopulation**_ - If a live cell is surrounded by more than three living neighbors the cell dies and does not make it to the next generation.
-4. _**Reproduction**_ - If a dead cell is surrounded by three living neighbors the cell stays alive and makes it to the next generation.
+1. _**despoblacion**_ - Si una celula viva está rodeada por menos de dos vecinos igualmente vivos, muere de soledad -no pasa a la siguiente generacion-.
+2. _**equilibrio**_ - Si una celula viva está rodeada por dos o tres vecinos igualmente vivos, se mantiene viva -pasa a la siguiente generacion-.
+4. _**sobrepoblacion**_ - Si una celula viva está rodeada por mas de tres vecinos igualmente vivos, muere de agobio -no pasa a la siguiente generacion-.
+7. _**reproduccion**_ - Si una celula muerta está rodeada por tres vecinas vivas, revive -aparece viva en la  siguiente generacion-.
 
 ## How to Run
 
-This project is built using Python 3.5 and requires that the user has at least Python 3 installed in order to run the program. Python 3+ can be installed [here](https://www.python.org/downloads/).
+Solo hace falta Python 3.5+ instalado. [ver aqui](https://www.python.org/downloads/).
 
-In order to run this project the user must open a terminal/console and navigate to the project folder and then into the script directory. Once inside of the script directory simply run **`python main.py`** in order to begin the program.
-
-Once the program has been started the user will be prompted to input the number of **rows** and **columns** to make the Game of Life grid.
+Para iniciar se puede abrir una terminal/consola (el CLI) y navegar a la carpeta del ejecutable -`/source`- y una vez dentro ejecutar el comando **`python main.py`** para iniciar el programa/juego. Una vez iniciado, se idican las dimensiones del tablero en las dos entradas siguientes: input the number of **rows** and **columns** 
 
